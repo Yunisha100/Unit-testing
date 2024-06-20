@@ -1,20 +1,3 @@
-/*
- * Copyright (c) 2009,  Sarah Heckman, Laurie Williams, Dright Ho
- * All Rights Reserved.
- *
- * Permission has been explicitly granted to the University of Minnesota
- * Software Engineering Center to use and distribute this source for
- * educational purposes, including delivering online education through
- * Coursera or other entities.
- *
- * No warranty is given regarding this software, including warranties as
- * to the correctness or completeness of this software, including
- * fitness for purpose.
- *
- * Modifications
- * 20171113 - Michael W. Whalen - Extended with additional recipe.
- * 20171114 - Ian J. De Silva   - Updated to JUnit 4; fixed variable names.
- */
 package edu.ncsu.csc326.coffeemaker;
 
 import static org.junit.Assert.*;
@@ -28,19 +11,8 @@ import edu.ncsu.csc326.coffeemaker.exceptions.RecipeException;
 import org.mockito.ArgumentCaptor;
 
 
-/**
- * Unit tests for CoffeeMaker class.
- *
- * @author Sarah Heckman
- *
- * Extended by Mike Whalen
- */
-
 public class CoffeeMakerTest {
 
-	//-----------------------------------------------------------------------
-	//	DATA MEMBERS
-	//-----------------------------------------------------------------------
 	private Recipe recipe1;
 	private Recipe recipe2;
 	private Recipe recipe3;
@@ -49,9 +21,6 @@ public class CoffeeMakerTest {
 
 	private Recipe [] stubRecipies;
 
-	/**
-	 * The coffee maker -- our object under test.
-	 */
 	private CoffeeMaker coffeeMaker;
     private Inventory inv;
 
@@ -61,9 +30,6 @@ public class CoffeeMakerTest {
 	private RecipeBook recipeBookStub;
 
 
-	//-----------------------------------------------------------------------
-	//	Set-up / Tear-down
-	//-----------------------------------------------------------------------
 	/**
 	 * Initializes some recipes to test with, creates the {@link CoffeeMaker}
 	 * object we wish to test, and stubs the {@link RecipeBook}.
@@ -126,9 +92,6 @@ public class CoffeeMakerTest {
 	}
 
 
-	//-----------------------------------------------------------------------
-	//	Test Methods
-	//-----------------------------------------------------------------------
 
 	// put your tests here!
     @Test
@@ -188,7 +151,7 @@ public class CoffeeMakerTest {
         when(recipeBookStub.deleteRecipe(3)).thenReturn(null);
     }
 
-    /*----------------------------------------------------------*/
+ 
     @Test
     public void testDummy() throws RecipeException {
         when(recipeBookStub.getRecipes()).thenReturn(stubRecipies);
@@ -208,14 +171,5 @@ public class CoffeeMakerTest {
         assertEquals(stubRecipies[2].getAmtSugar(), 1);
         assertEquals(stubRecipies[2].getPrice(), 100);
     }
-/*
-	@Test
-	public void testException5() throws InventoryException {
-		coffeeMaker.addInventory("16", "16", "-6", "16");
-	}
 
-	@Test
-	public void testException7() throws InventoryException {
-		coffeeMaker.addInventory("1", "2", "3", "4");
-	}*/
 }

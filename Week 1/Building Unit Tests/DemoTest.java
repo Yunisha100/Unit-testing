@@ -62,18 +62,5 @@ public class DemoTest {
         assertFalse(Demo.isTriangle(1, 2, -1));
     }
 
-    /*
-    @Test
-    public void test_main_program_1() {
-        ByteArrayInputStream in = new ByteArrayInputStream("5\n12\n13\n".getBytes());
-        System.setIn(in);
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(out));
-        String consoleOutput = "Enter side 1:\n";
-        consoleOutput += "Enter side 2:\n";
-        consoleOutput += "Enter side 3:\n";
-        consoleOutput += "This is a triangle:\n";
-        assertEquals(consoleOutput, out.toString());
-    }
-*/
+
 }
